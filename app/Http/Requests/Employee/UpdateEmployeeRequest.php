@@ -40,7 +40,7 @@ class UpdateEmployeeRequest extends FormRequest
                 'required'
             ],
             'hire_date' => [
-                'datetime',
+                'date',
                 'required'
             ],
             

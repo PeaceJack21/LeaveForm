@@ -30,6 +30,6 @@ class Position extends Model
 
     public function employee()
     {
-        return $this->beLongsTo(Employee::class);
+        return $this->hasMany(Employee::class);
     }
 }

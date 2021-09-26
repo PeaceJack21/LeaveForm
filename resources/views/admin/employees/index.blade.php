@@ -84,7 +84,7 @@
                                 {{ $employee->position->title ?? '' }}
                             </td>
                             <td>
-                                {{ $employee->user->title ?? '' }}
+                                {{ $employee->user->name ?? '' }}
                             </td>
                             <td>
                                 @can('employee_show')

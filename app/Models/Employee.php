@@ -32,6 +32,10 @@ class Employee extends Model
 
     public function position()
     {
-        return $this->hasOne(Position::class);
+        return $this->beLongsTo(Position::class);
+    }
+    public function user()
+    {
+        return $this->beLongsTo(User::class);
     }
 }
