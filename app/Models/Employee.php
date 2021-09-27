@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,10 +26,16 @@ class Employee extends Model
     ];
 
     protected $dates = [
+        'hire_date',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
+
+    public function getHireDateAttribute($value)
+    {
+        return $value ? Carbon::parse($value)->format(config('panel.date_format')) : null;
+    }
 
     public function position()
     {
